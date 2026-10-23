@@ -1,0 +1,25 @@
+{
+  "name": "todo-list-project",
+  "version": "1.0.0",
+  "description": "Node.js project",
+  "homepage": "https://github.com/Rushikeshpwar/ToDo-List#readme",
+  "bugs": {
+    "url": "https://github.com/Rushikeshpwar/ToDo-List/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rushikeshpwar/ToDo-List.git"
+  },
+  "license": "ISC",
+  "author": "Rushikesh Pawar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "nodemon": "^3.1.14"
+  }
+}
