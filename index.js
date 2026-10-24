@@ -1,24 +1,58 @@
 import express from "express";
 import path from "path";
+import { MongoClient } from "mongodb";
 
 const app = express();
-const publicPath = path.resolve('public');
+
+const publicPath = path.resolve('public'); // Serve static files from the "public" directory
 app.use(express.static(publicPath));
 
 app.set("view engine", "ejs");
 
+const dbName = "node-project";
+const collectionName = "todo";
+const url = "mongodb://localhost:27017";
+
+const client = new MongoClient(url);
+
+const connection = async () => {
+    const connect = await client.connect();
+    return await connect.db(dbName);
+};
+
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
     res.render("list");
-})
+});
+
 app.get('/add', (req, res) => {
     res.render("add");
-})
+});
+
 app.get('/update', (req, res) => {
     res.render("update");
-})
+});
 
+app.post('/add', async (req, res) => {
+    const db = await connection();
+    const collection = db.collection(collectionName);
+    const result = await collection.insertOne(req.body);
+
+    
+if (result.acknowledged) {
+    res.redirect("/");
+} else {
+    res.send("Error in adding task");
+}
+
+
+});
+
+app.post('/update', (req, res) => {
+    res.redirect("/");
+});
 
 app.listen(3200, () => {
     console.log("Server is running on port 3200");
-})
-
+});
