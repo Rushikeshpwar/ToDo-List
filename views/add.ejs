@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add List</title>
+    <title>Add New Task</title>
         <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
       <%- include('navbar') %>
-    <h1>Add List</h1>
+  
+
+    <div class="container">
+          <h1>Add List</h1>
+        <form  class="todo-form" action="/add" method="post" >
+            <input class="input" type="text" placeholder="Enter Task title" name="title">
+            <br>
+            <br>
+            <textarea class="input" name="description" id="">
+
+            </textarea>
+            <br><br>
+            <button class="btn" type="submit">Add New Task</button>
+
+        </form>
+    </div>
+
 </body>
 </html>
