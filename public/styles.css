@@ -79,3 +79,63 @@ textarea .input{
 .btn:hover {
     background-color: #34495e;
 }
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin:  auto;
+
+}
+
+.task-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #4caf50;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.task-title {
+    font-width: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.task-description {
+   
+    color: #666;
+}
+
+.delete-item {
+    margin-top: 10px;
+    padding :   6px 12px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius : 4px;
+    cursor : pointer;
+    text-decoration :none;
+    display :inline-block;
+}
+
+.delete-item:hover {
+    background-color : red;
+}
+.Update-item {
+    margin-top: 10px;
+    padding :   6px 12px;
+    background-color: #27e127;
+    color: #fff;
+    border: none;
+    border-radius : 4px;
+    cursor : pointer;
+    text-decoration :none;
+    display :inline-block;
+}
+
+.Update-item:hover {
+    background-color : green;
+}
